@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_check.c                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/02/24 15:24:19 by osukhore         ###   ########.fr       */
+/*   Created: 2026/02/24 15:11:07 by osukhore          #+#    #+#             */
+/*   Updated: 2026/02/24 15:29:03 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+//#include "push_swap.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 int	ft_isdigit(int c)
 {
@@ -34,11 +37,28 @@ int	ft_num_check(const char *str)
 	}
 	return (1);
 }
+int	main(int argc, char **argv)
+{
+	int	i;
 
+	i = 1;
+	if (argc < 2)
+		return(printf("Error\n"));
 
-
-// What do we want to do here?
-// 1. FT_SPLIT using the ' ' [space]
-// 2. Check each resulting string if: isdigit, atoi accepts +/-, isdup
-// 3. Errors to be printed in separate function.c
-// 4. How to take input in number and string form?
+	while (i < argc)
+	{
+		if (ft_num_check(argv[i]) == 1)
+			i++;
+		else
+			return(printf("Error\n"));
+	}
+	i = 1;
+	while (i < argc)
+	{
+		printf("%s", argv[i]);
+		i++;
+		if (argv[i])
+			printf(" ");
+	}
+	return(0);
+}
