@@ -6,20 +6,20 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 12:08:53 by osukhore          #+#    #+#             */
-/*   Updated: 2026/02/25 13:00:37 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:32:11 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_space(char const *s1, char const *s2)
+char	*ft_strjoin_with_space(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	s1_len;
 	size_t	s2_len;
 	char	*str;
 
-	i = 0;
+	i = -1;
 	if (s1 == 0 || s2 == 0)
 		return (0);
 	s1_len = ft_strlen(s1);
@@ -27,10 +27,10 @@ char	*ft_strjoin_space(char const *s1, char const *s2)
 	str = (char *)malloc(s1_len + s2_len + 2);
 	if (str == 0)
 		return (0);
-	str[0] = ' ';
 	while (++i < s1_len)
 		str[i] = s1[i];
-	i = -1;
+	str[s1_len] = ' ';
+	i = 0;
 	while (++i < s2_len)
 		str[s1_len + i] = s2[i];
 	str[s1_len + i] = '\0';
