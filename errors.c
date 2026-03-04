@@ -1,49 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 15:11:07 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/04 10:52:52 by osukhore         ###   ########.fr       */
+/*   Created: 2026/03/04 10:52:09 by osukhore          #+#    #+#             */
+/*   Updated: 2026/03/04 10:53:05 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-//static int	count_nbr(char *argv)
-//{
-//	int		count;
-//
-//	count = 0;
-//	while (argv[count])
-//		count++;
-//	return (count);
-//}
-
-int	main(int argc, char **argv)
+// ERROR MANAGEMENT
+void	free_forward(char **to_free)
 {
 	int	i;
 
-	i = 1;
-	if (argc < 2)
-		return(0);
-	while (i < argc)
-	{
-		if (ft_atoi(argv[i]))
-			i++;
-		else
-			return(printf("Error\n"));
-	}
-	i = 1;
-	while (i < argc)
-	{
-		printf("%s", argv[i]);
-		i++;
-		if (argv[i])
-			printf(" ");
-	}
-	return(0);
+	i = -1;
+	while (to_free[++i])
+		free(to_free[i]);
+	free(to_free);
+}
+
+void	error_message(char **to_free)
+{
+	free_forward(to_free);
+	ft_putendl_fd("Error", 2);
 }
