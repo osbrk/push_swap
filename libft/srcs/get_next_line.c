@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 11:35:00 by osukhore          #+#    #+#             */
-/*   Updated: 2025/12/16 14:30:24 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/04 13:50:56 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,16 @@ static char	*update_placeholder(char *placeholder)
 
 char	*get_next_line(int fd)
 {
-	static char	*placeholder;
+	static char	*placeholder[FD_MAX];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= FD_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
-	placeholder = read_into_placeholder(fd, placeholder);
-	if (placeholder == NULL)
+	placeholder[fd] = read_into_placeholder(fd, placeholder[fd]);
+	if (placeholder[fd] == NULL)
 		return (NULL);
-	line = extract_line(placeholder);
-	placeholder = update_placeholder(placeholder);
+	line = extract_line(placeholder[fd]);
+	placeholder[fd] = update_placeholder(placeholder[fd]);
 	return (line);
 }
+

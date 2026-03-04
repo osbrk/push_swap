@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 12:08:53 by osukhore          #+#    #+#             */
-/*   Updated: 2026/02/26 12:32:11 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/04 13:15:13 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin_with_space(char const *s1, char const *s2)
 
 	i = -1;
 	if (s1 == 0 || s2 == 0)
-		return (0);
+		return (s1);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	str = (char *)malloc(s1_len + s2_len + 2);

@@ -6,13 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 11:39:52 by osukhore          #+#    #+#             */
-/*   Updated: 2025/11/24 12:35:14 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/04 13:51:08 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdarg.h>
-#include <stdio.h>
+#include "printf.h"
 
 static void	ft_parse(char format, va_list *par_list, int *count)
 {
