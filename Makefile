@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/07 13:16:15 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/04 12:10:41 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/04 13:04:24 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,17 @@ NAME			:=	push_swap
 LIBFT			:=	libft/libft.a
 FLAGS			:=	-c -Wall -Wextra -Werror -g
 
-///// COMMANDS \\\\\
+# // [COMMANDS]
 CC				:=	@cc
 CP				:=	@/bin/cp
 MAKE			:=	@make -C libft
 MKDIR			:=	@/bin/mkdir
 RM				:=	@/bin/rm -rf
 
-///// INCLUDES \\\\\
+# // [INCLUDES]
 INC				:=	-I ./inc/
 
-///// SOURCES \\\\\
+# // [SOURCES] STILL TO MODIFY WITH MORE .C
 SRCS_DIR		:=	srcs/
 
 PARSING			:=	arg_check.c \
@@ -37,12 +37,12 @@ PUSH_SWAP		:=	push_swap.c
 
 SRCS			:=	$(PARSING) $(OPERATIONS) $(PUSH_SWAP)
 
-///// OBJECTS \\\\\
+# // [OBJECTS]
 OBJS_DIR		:=	objs/
 
 OBJS			:=	$(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 
-///// EXECUTION \\\\\
+# // [EXECUTION]
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
@@ -65,55 +65,3 @@ fclean:			clean
 re:				fclean all
 
 .PHONY:	all clean fclean re
-//// EDITING
-
-NAME := push_swap.a
-LIBFT = $(LIBDIR)libft.a
-CC := cc
-CFLAGS := -Wall -Wextra -Werror
-CFLAGS += -g
-
-OBJ_DIR = obj/
-LIBDIR = ./libft/
-
-IFLAGS = -I$(LIBDIR)
-LIFLAGS = -L.
-LFLAGS += -lft
-LIFLAGS += -L$(LIBDIR)
-LFLAGS = -lftpush_swap
-
-SRC_FILES := \
-push_swap.c \
-
-OBJ_FILES := $(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
-
-all: $(NAME)
-
-$(NAME): $(LIBFT) $(OBJ_FILES)
-	ar rcs $(NAME) $(OBJ_FILES)
-
-$(OBJ_DIR)%.o: %.c
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
-
-$(LIBFT):
-	$(MAKE) -C $(LIBDIR)
-	cp $(LIBFT) $(NAME)
-
-clean:
-	$(MAKE) -C $(LIBDIR) clean
-	rm -f $(OBJ_FILES)
-	@rm -rf $(OBJ_DIR)
-
-fclean: clean
-	$(MAKE) -C $(LIBDIR) fclean
-	rm -f $(NAME)
-
-re: fclean all
-
-test: fclean $(NAME)
-	$(CC) $(CFLAGS) OS_push_swap.c $(IFLAGS) $(LIFLAGS) $(LFLAGS)
-	valgrind ./a.out
-#	./a.out
-
-.PHONY: all clean fclean re test

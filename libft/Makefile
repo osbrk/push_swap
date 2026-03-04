@@ -6,20 +6,20 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:38:46 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/04 12:13:57 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/04 13:05:06 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			:=	libft.a
 FLAGS			:=	-c -Wall -Wextra -Werror
 
-///// COMMANDS \\\\\
+# // [COMMANDS]
 CC				:=	@cc
 AR				:=	@/bin/ar rcs
 MKDIR			:=	@/bin/mkdir
 RM				:=	@/bin/rm -rf
 
-///// SOURCES \\\\\
+# // [SOURCES]
 SRCS_DIR		:=	srcs/
 
 SRCS_IS			:=	ft_isalnum.c \
@@ -81,12 +81,12 @@ SRC_GNL			:=	get_next_line.c \
 SRCS			:=	$(SRC_IS) $(SRC_STR) $(SRC_MEM) $(SRC_CNV) \
 					$(SRC_FD) $(SRC_PRINT) $(SRC_GNL)
 
-///// OBJECTS \\\\\
+# // [OBJECTS]
 OBJS_DIR		:= objs/
 
 OBJS			:= $(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 
-///// EXECUTION \\\\\
+# // [EXECUTION]
 all:			$(NAME)
 
 $(NAME):		$(OBJS)

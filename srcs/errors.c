@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 14:39:40 by osukhore          #+#    #+#             */
-/*   Updated: 2026/02/25 12:56:04 by osukhore         ###   ########.fr       */
+/*   Created: 2026/03/04 10:52:09 by osukhore          #+#    #+#             */
+/*   Updated: 2026/03/04 13:11:20 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft.h"
+// ERROR MANAGEMENT
+void	free_forward(char **to_free)
+{
+	int	i;
 
-int		ft_num_check(const char *str);
-//int		ft_isdigit(int c);
+	i = -1;
+	while (to_free[++i])
+		free(to_free[i]);
+	free(to_free);
+}
 
-# endif //PUSH_SWAP_H
+void	error_message(char **to_free)
+{
+	free_forward(to_free);
+	ft_putendl_fd("Error", 2);
+}

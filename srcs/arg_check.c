@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/04 10:55:18 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/04 13:11:08 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ static int	check_dup(char **argv)
 	}
 	return (0);
 }
+
 int	check_nbr(const char *nbr)
 {
-	int	i;
-	long tmp_nbr;
+	int		i;
+	long	tmp_nbr;
 
 	i = 0;
 	while (nbr[i])
@@ -82,34 +83,3 @@ int	check_error(char **argv)
 		free_forward(tmp_argv);
 	return (0);
 }
-
-///// OLD BELOW
-//int	ft_isdigit(int c)
-//{
-//	if (c >= 48 && c <= 57)
-//		return (2048);
-//	return (0);
-//}
-//
-//int	ft_num_check(const char *str)
-//{
-//	int	i;
-//
-//	i = 0;
-//	if (str[i] == 43 || str[i] == 45)
-//		i++;
-//	while (str[i])
-//	{
-//		if (ft_isdigit(str[i]) == 0)
-//			return (0);
-//		i++;
-//	}
-//	return (1);
-//}
-
-
-// What do we want to do here?
-// 1. FT_SPLIT using the ' ' [space]
-// 2. Check each resulting string if: isdigit, atoi accepts +/-, isdup
-// 3. Errors to be printed in separate function.c
-// 4. How to take input in number and string form?
