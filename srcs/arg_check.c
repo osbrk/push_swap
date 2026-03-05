@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/04 13:11:08 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 12:47:33 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,15 @@ static int	check_dup(char **argv)
 {
 	int		i;
 	int		j;
-	int		k;
-	int		count;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
-		count = ft_strlen(argv[i]);
-		while (j < count)
+		j = i + 1;
+		while (argv[j])
 		{
-			k = j + 1;
-			while (j < count)
-			{
-				if (ft_atol(argv[j]) == ft_atol(argv[k]))
-					return (1);
-				k++;
-			}
+			if (ft_atol(argv[i]) == ft_atol(argv[j]))
+				return (1);
 			j++;
 		}
 		i++;
@@ -61,7 +54,7 @@ int	check_nbr(const char *nbr)
 }
 
 // CHECK FOR MIX OF STRING AND DIGITS
-int	check_error(char **argv)
+char	**check_error(char **argv)
 {
 	int		count;
 	char	tmp_str;
@@ -73,13 +66,12 @@ int	check_error(char **argv)
 	tmp_argv = ft_split(tmp_str, ' ');
 	if (tmp_str)
 		free(tmp_str);
-	count = 0;
-	while (tmp_argv[count++])
+	count = -1;
+	while (tmp_argv[++count])
 	{
 		if (check_dup(tmp_argv) || check_nbr(tmp_argv[count]))
 			error_message(tmp_argv);
+			return (NULL);
 	}
-	if (tmp_argv)
-		free_forward(tmp_argv);
-	return (0);
+	return (tmp_argv);
 }
