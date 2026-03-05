@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstcat.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/04 14:15:03 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 11:20:52 by osukhore         ###   ########.fr       */
+/*   Created: 2026/03/05 11:22:15 by osukhore          #+#    #+#             */
+/*   Updated: 2026/03/05 11:23:16 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstcat(t_list **list1, t_list *list2)
+int	ft_lstsize(t_list *list)
 {
-	t_list	*last;
+	int	count;
 
-	if (!list1)
-		return ;
-	if (!*list1)
+	count = 0;
+	while (list)
 	{
-		*list1 = list2;
-		return ;
+		count++;
+		list = list->next;
 	}
-	last = ft_lstlast(*list1);
-	last->next = list2;
+	return (count);
 }
