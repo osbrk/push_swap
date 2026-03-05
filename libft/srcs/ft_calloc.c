@@ -6,12 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 15:03:50 by osukhore          #+#    #+#             */
-/*   Updated: 2025/11/03 15:43:46 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 15:59:09 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

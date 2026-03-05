@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:38:51 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 12:52:17 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 16:07:58 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack	*make_stack(char **argv)
 			stack_add_back(&result_stack, stack_new(tmp_nbr));
 		count++;
 	}
-
+	return (result_stack);
 }
 
 void	indexing(t_stack *stack, int size)

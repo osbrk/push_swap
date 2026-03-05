@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:27:37 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 15:42:43 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 16:06:18 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	sort_three(t_stack **stack_a)
 {
 	int	max;
 
-	max = find_max((*stack_a)->index);
+	max = find_max(*stack_a)->index;
 	if ((*stack_a)->index == max)
 		rotate_ra(stack_a);
 	else if ((*stack_a)->next->index == max)
@@ -66,7 +66,7 @@ static void	sort_all(t_stack **stack_a, t_stack **stack_b, int size)
 		while (j <= max)
 		{
 			if (((*stack_a)->index >> i) & 1)
-				rotate_ra(stack_a)
+				rotate_ra(stack_a);
 			else
 				push_pb(stack_a, stack_b);
 			j++;

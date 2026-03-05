@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:38:46 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/04 13:05:06 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/05 16:00:27 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ AR				:=	@/bin/ar rcs
 MKDIR			:=	@/bin/mkdir
 RM				:=	@/bin/rm -rf
 
+# // [INCLUDES]
+INC				:=	-I ./inc/
+
 # // [SOURCES]
 SRCS_DIR		:=	srcs/
 
@@ -27,7 +30,11 @@ SRCS_IS			:=	ft_isalnum.c \
 					ft_isascii.c \
 					ft_isdigit.c \
 					ft_isprint.c \
-					ft_isspace.c
+					ft_isspace.c \
+					ft_isupper.c \
+					ft_islower.c
+
+SRC_COUNT		:=	ft_countwords.c
 
 SRC_STR			:=	ft_split.c \
 					ft_strcat.c \
@@ -75,11 +82,10 @@ SRC_PRINT		:=	ft_printf.c \
 					ft_putpointer.c \
 					ft_putstr_count.c
 
-SRC_GNL			:=	get_next_line.c \
-					get_next_line_utils.c
+SRC_GNL			:=	get_next_line.c
 
-SRCS			:=	$(SRC_IS) $(SRC_STR) $(SRC_MEM) $(SRC_CNV) \
-					$(SRC_FD) $(SRC_PRINT) $(SRC_GNL)
+SRCS			:=	$(SRC_IS) $(SRC_COUNT) $(SRC_STR) $(SRC_MEM) \
+					$(SRC_CNV) $(SRC_FD) $(SRC_PRINT) $(SRC_GNL)
 
 # // [OBJECTS]
 OBJS_DIR		:= objs/

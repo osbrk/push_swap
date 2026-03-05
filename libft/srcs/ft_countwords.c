@@ -6,11 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 13:30:13 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/04 13:30:24 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 15:59:17 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 size_t	ft_wordcount(char const *s, char c)
 {

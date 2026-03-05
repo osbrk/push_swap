@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 10:20:57 by osukhore          #+#    #+#             */
-/*   Updated: 2025/11/03 11:02:13 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 16:01:16 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,29 +21,6 @@ static void	ft_free(char **str, size_t i)
 		free(str[i]);
 	}
 	free(str);
-}
-
-static size_t	ft_wordcount(char const *s, char c)
-{
-	size_t	i;
-	size_t	count;
-
-	i = 0;
-	count = 0;
-	if (c == 0)
-		return (1);
-	while (s[i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			count++;
-			while (s[i] != '\0' && s[i] != c)
-				i++;
-		}
-		else
-			i++;
-	}
-	return (count);
 }
 
 static int	ft_wordcopy(char **str, char const *s, char c, size_t count)

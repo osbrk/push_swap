@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/07 13:16:15 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/04 13:04:24 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/05 16:09:51 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,19 @@ SRCS_DIR		:=	srcs/
 PARSING			:=	arg_check.c \
 					errors.c \
 
+STACKS			:=	make_stack.c \
+					stack_utils.c
 
-OPERATIONS		:=
+OPERATIONS		:=	sort_push.c \
+					sort_reverse_rotate.c \
+					sort_rotate.c \
+					sort_stack.c \
+					sort_swap.c \
+					sort_utils.c
 
 PUSH_SWAP		:=	push_swap.c
 
-SRCS			:=	$(PARSING) $(OPERATIONS) $(PUSH_SWAP)
+SRCS			:=	$(PARSING) $(OPERATIONS) $(STACKS) $(PUSH_SWAP)
 
 # // [OBJECTS]
 OBJS_DIR		:=	objs/

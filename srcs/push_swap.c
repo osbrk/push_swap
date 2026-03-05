@@ -6,12 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 15:11:07 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 15:43:52 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 16:06:39 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int argc, char **argv)
 {

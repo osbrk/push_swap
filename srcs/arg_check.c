@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 12:47:33 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/05 15:58:41 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	check_nbr(const char *nbr)
 	i = 0;
 	while (nbr[i])
 	{
-		tmp_nbr = ft_atol(nbr[i]);
+		tmp_nbr = ft_atol(&nbr[i]);
 		if ((nbr[i] == 43 || nbr[i] == 45) && !ft_isdigit(nbr[i + 1]))
 			return (1);
-		else if (!ft_isdigit(nbr) && (nbr[i] != 43 || nbr[i] != 45))
+		else if (!ft_isdigit(nbr[i]))
 			return (1);
 		else if (tmp_nbr < INT_MIN || tmp_nbr > INT_MAX)
 			return (1);
@@ -57,7 +57,7 @@ int	check_nbr(const char *nbr)
 char	**check_error(char **argv)
 {
 	int		count;
-	char	tmp_str;
+	char	*tmp_str;
 	char	**tmp_argv;
 
 	count = 1;
@@ -70,8 +70,10 @@ char	**check_error(char **argv)
 	while (tmp_argv[++count])
 	{
 		if (check_dup(tmp_argv) || check_nbr(tmp_argv[count]))
+		{
 			error_message(tmp_argv);
 			return (NULL);
+		}
 	}
 	return (tmp_argv);
 }
