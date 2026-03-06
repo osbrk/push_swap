@@ -6,11 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 11:31:58 by osukhore          #+#    #+#             */
-/*   Updated: 2025/11/24 12:34:32 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/06 10:49:28 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 void	ft_putpointer(void *pointer, int *count)
 {

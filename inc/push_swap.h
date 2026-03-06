@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:39:40 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 15:52:52 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/06 12:12:47 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ typedef struct s_stack
 
 
 // [PROTOTYPES]
-// PARSING
-int		check_nbr(const char *nbr);
-
 // ERRORS
 char	**check_error(char **argv);
 void	free_forward(char **to_free);

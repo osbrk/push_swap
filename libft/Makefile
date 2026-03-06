@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:38:46 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/05 16:00:27 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/06 11:16:05 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ INC				:=	-I ./inc/
 # // [SOURCES]
 SRCS_DIR		:=	srcs/
 
-SRCS_IS			:=	ft_isalnum.c \
+SRC_IS			:=	ft_isalnum.c \
 					ft_isalpha.c \
 					ft_isascii.c \
 					ft_isdigit.c \
@@ -61,7 +61,7 @@ SRC_MEM			:=	ft_bzero.c \
 					ft_memcmp.c \
 					ft_memcpy.c \
 					ft_memmove.c \
-					ft_memset
+					ft_memset.c
 
 SRC_CNV			:=	ft_toupper.c \
 					ft_tolower.c \

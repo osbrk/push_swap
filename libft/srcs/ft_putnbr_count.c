@@ -6,11 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:12:33 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/04 13:40:59 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/06 10:49:23 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 static void	ft_put_unsigned_base(unsigned long long n, int base,
 	const char *symbols, int *count)

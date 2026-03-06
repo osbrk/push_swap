@@ -6,11 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 10:26:23 by osukhore          #+#    #+#             */
-/*   Updated: 2025/11/24 12:34:22 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/06 10:49:11 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 void	ft_putchar_count(char c, int *count)
 {

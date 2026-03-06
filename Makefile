@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/07 13:16:15 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/05 16:09:51 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/06 11:17:50 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ CP				:=	@/bin/cp
 MAKE			:=	@make -C libft
 MKDIR			:=	@/bin/mkdir
 RM				:=	@/bin/rm -rf
+LIBFT_DIR		:=	./libft
+LIBFT			:=	$(LIBFT_DIR)/libft.a
 
 # // [INCLUDES]
 INC				:=	-I ./inc/
@@ -28,7 +30,7 @@ INC				:=	-I ./inc/
 SRCS_DIR		:=	srcs/
 
 PARSING			:=	arg_check.c \
-					errors.c \
+					errors.c
 
 STACKS			:=	make_stack.c \
 					stack_utils.c
@@ -42,7 +44,7 @@ OPERATIONS		:=	sort_push.c \
 
 PUSH_SWAP		:=	push_swap.c
 
-SRCS			:=	$(PARSING) $(OPERATIONS) $(STACKS) $(PUSH_SWAP)
+SRCS			:=	$(PARSING) $(STACKS) $(OPERATIONS) $(PUSH_SWAP)
 
 # // [OBJECTS]
 OBJS_DIR		:=	objs/
@@ -72,3 +74,6 @@ fclean:			clean
 re:				fclean all
 
 .PHONY:	all clean fclean re
+
+#$(LIBFT):
+#				$(MAKE) -C $(LIBFT_DIR)

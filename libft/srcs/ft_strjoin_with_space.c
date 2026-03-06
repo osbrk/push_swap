@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 12:08:53 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 16:02:05 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/06 12:37:17 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin_with_space(char const *s1, char const *s2)
 
 	i = -1;
 	if (s1 == 0 || s2 == 0)
-		return ((char *)s1);
+		return (0);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	str = (char *)malloc(s1_len + s2_len + 2);
@@ -30,7 +30,8 @@ char	*ft_strjoin_with_space(char const *s1, char const *s2)
 	while (++i < s1_len)
 		str[i] = s1[i];
 	str[s1_len] = ' ';
-	i = 0;
+	s1_len++;
+	i = -1;
 	while (++i < s2_len)
 		str[s1_len + i] = s2[i];
 	str[s1_len + i] = '\0';
