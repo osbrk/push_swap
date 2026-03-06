@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/07 13:16:15 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/06 11:17:50 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/06 15:43:04 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LIBFT			:=	$(LIBFT_DIR)/libft.a
 # // [INCLUDES]
 INC				:=	-I ./inc/
 
-# // [SOURCES] STILL TO MODIFY WITH MORE .C
+# // [SOURCES]
 SRCS_DIR		:=	srcs/
 
 PARSING			:=	arg_check.c \

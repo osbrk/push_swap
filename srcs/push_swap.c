@@ -6,28 +6,11 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 15:11:07 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/06 12:14:17 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/06 16:03:48 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//int	main(int argc, char **argv)
-//{
-//	char	**input;
-//	t_stack	*stacka;
-//	t_stack	*stackb;
-//
-//	if (argc < 2)
-//		return (0);
-//	input = check_error(argv);
-//	stacka = make_a_stack(argc, argv);
-//	stackb = NULL;
-//	indexing(stacka, stack_size(stacka));
-//	sort_stack(&stacka, &stackb);
-//	stack_clear(&stacka);
-//	stack_clear(&stackb);
-//}
 
 int	main(int argc, char **argv)
 {
@@ -38,6 +21,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	input = check_error(argv);
+	if (input == NULL)
+		ft_putendl_fd("Error", 2);
 	stack_a = make_stack(input);
 	stack_b = NULL;
 	indexing(stack_a, stack_size(stack_a));

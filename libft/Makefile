@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 14:38:46 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/06 11:16:05 by osukhore         ###   ########.fr        #
+#    Updated: 2026/03/06 15:44:59 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC_COUNT		:=	ft_countwords.c
 
 SRC_STR			:=	ft_split.c \
 					ft_strcat.c \
+					ft_strcat_with_space.c \
 					ft_strchr.c \
 					ft_strcmp.c \
 					ft_strcpy.c \

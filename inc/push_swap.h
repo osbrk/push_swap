@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:39:40 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/06 12:12:47 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:46:17 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_stack
 // [PROTOTYPES]
 // ERRORS
 char	**check_error(char **argv);
-void	free_forward(char **to_free);
-void	error_message(char **to_free);
+char	**free_forward(char **to_free);
+char	**error_message(char **to_free);
 
 // STACKS
 t_stack	*make_stack(char **argv);
