@@ -1,3 +1,4 @@
-Visualizer/*
+Visualizer/
 *.py
 checker_linux
+push_swap
