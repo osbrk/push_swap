@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:40:32 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/06 15:43:35 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/16 14:20:49 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strjoin_with_space(char const *s1, char const *s2);
+char	*ft_strjoin_with_space(char *s1, char const *s2);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);

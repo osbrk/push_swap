@@ -6,13 +6,13 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 12:08:53 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/06 15:16:58 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/16 14:20:23 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_with_space(char const *s1, char const *s2)
+char	*ft_strjoin_with_space(char *s1, char const *s2)
 {
 	size_t	i;
 	size_t	s1_len;
@@ -35,6 +35,8 @@ char	*ft_strjoin_with_space(char const *s1, char const *s2)
 	while (++i < s2_len)
 		str[s1_len + i] = s2[i];
 	str[s1_len + i] = '\0';
+	if (s1)
+		free (s1);
 	return (str);
 }
 

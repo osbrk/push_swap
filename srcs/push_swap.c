@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 15:11:07 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/06 16:03:48 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/16 14:24:23 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ int	main(int argc, char **argv)
 	sort_stack(&stack_a, &stack_b);
 	stack_clear(&stack_a);
 	stack_clear(&stack_b);
+	free_forward(input);
 }
