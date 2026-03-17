@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/16 14:23:03 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/17 12:42:55 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ static int	check_nbr(const char *nbr)
 	{
 		if ((nbr[i] == 43 || nbr[i] == 45) && ft_isdigit(nbr[i + 1]) == 0)
 			return (1);
-		else if (ft_isdigit(nbr[i]) == 0)
+		else if (ft_isdigit(nbr[i + 1]) != 0)
+			i++;
+		if (ft_isdigit(nbr[i]) == 0)
 			return (1);
 		i++;
 	}
@@ -70,7 +72,11 @@ char	**check_error(char **argv)
 	while (tmp_argv[++count])
 	{
 		if (check_dup(tmp_argv) || check_nbr(tmp_argv[count]))
+		{
+			if (tmp_str)
+				free (tmp_str);
 			error_message(tmp_argv);
+		}
 	}
 	if (tmp_str)
 		free (tmp_str);
