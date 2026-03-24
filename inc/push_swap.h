@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:39:40 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/06 14:46:17 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/24 12:05:07 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-
 // [PROTOTYPES]
 // ERRORS
 char	**check_error(char **argv);
@@ -41,7 +40,7 @@ t_stack	*stack_new(int content);
 t_stack	*stack_last(t_stack *list);
 void	stack_add_front(t_stack **list, t_stack *new);
 void	stack_add_back(t_stack **list, t_stack *new);
-void	stack_clear (t_stack **stack);
+void	stack_clear(t_stack **stack);
 
 // OPERATIONS
 void	push_pa(t_stack **stack_a, t_stack **stack_b);

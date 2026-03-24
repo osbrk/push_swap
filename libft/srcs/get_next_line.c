@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 11:35:00 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/04 13:50:56 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/24 12:05:55 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,3 @@ char	*get_next_line(int fd)
 	placeholder[fd] = update_placeholder(placeholder[fd]);
 	return (line);
 }
-

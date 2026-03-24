@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:54:36 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 13:03:06 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/24 12:07:38 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ void	stack_add_back(t_stack **list, t_stack *new)
 		*list = new;
 }
 
-void	stack_clear (t_stack **stack)
+void	stack_clear(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	while(*stack)
+	while (*stack)
 	{
 		tmp = *stack;
 		*stack = (*stack)->next;

@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 15:27:37 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/05 16:06:18 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/24 12:08:50 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_nbr_bits(int nbr)
 {
-	int max_bits;
+	int	max_bits;
 
 	max_bits = 0;
 	while (nbr >> max_bits)
@@ -32,16 +32,17 @@ static void	sort_three(t_stack **stack_a)
 	else if ((*stack_a)->next->index == max)
 		rotate_rra(stack_a);
 	if ((*stack_a)->index > (*stack_a)->next->index)
-	swap_sa(stack_a);
+		swap_sa(stack_a);
 }
 
 static void	sort_five(t_stack **stack_a, t_stack **stack_b, int size)
 {
-	while(size--)
+	while (size--)
 	{
 		if ((*stack_a)->index == 0 || (*stack_a)->index == 1)
 			push_pb(stack_a, stack_b);
-		else (rotate_ra(stack_a));
+		else
+			rotate_ra(stack_a);
 	}
 	sort_three(stack_a);
 	push_pa(stack_a, stack_b);
@@ -91,5 +92,3 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	else
 		sort_all(stack_a, stack_b, size);
 }
-
-

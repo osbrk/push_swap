@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:38:51 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/24 11:52:12 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/24 12:07:07 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	indexing(t_stack *stack, int size)
 		while (tmp)
 		{
 			if (!tmp->index && (large == NULL
-				|| tmp->content > large->content))
+					|| tmp->content > large->content))
 				large = tmp;
 			tmp = tmp->next;
 		}

@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/17 12:42:55 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/03/24 12:09:01 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	check_nbr(const char *nbr)
 	i = 0;
 	tmp_nbr = ft_atol(nbr);
 	if (tmp_nbr < INT_MIN || tmp_nbr > INT_MAX)
-			return (1);
+		return (1);
 	while (nbr[i])
 	{
 		if ((nbr[i] == 43 || nbr[i] == 45) && ft_isdigit(nbr[i + 1]) == 0)
