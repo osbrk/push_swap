@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/04/03 12:55:27 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:57:59 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ char	**check_error(char **argv)
 	char	**tmp_argv;
 
 	count = 1;
+	tmp_str = NULL;
 	if (argv[count])
 		tmp_str = ft_strdup(argv[count]);
 	while (argv[++count])

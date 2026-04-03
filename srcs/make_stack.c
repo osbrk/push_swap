@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:38:51 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/24 12:07:07 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:57:25 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_stack	*make_stack(char **argv)
 	int		tmp_nbr;
 	t_stack	*result_stack;
 
+	result_stack = NULL;
 	count = 0;
 	while (argv[count])
 	{
