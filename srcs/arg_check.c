@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/03/24 12:09:01 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/04/03 12:19:57 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ char	**check_error(char **argv)
 	count = -1;
 	while (tmp_argv[++count])
 	{
-		if (check_dup(tmp_argv) || check_nbr(tmp_argv[count]))
+		if (check_dup(tmp_argv) || check_nbr(tmp_argv[count]) ||
+			tmp_argv == 0 || tmp_argv[0] == 0)
 		{
 			if (tmp_str)
 				free (tmp_str);
