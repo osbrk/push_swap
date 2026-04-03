@@ -6,11 +6,27 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/04/03 14:56:56 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/04/03 15:17:56 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// EMPTY STRING CHECK
+static int	check_empty_string(char *argv)
+{
+	int	i;
+
+	i = -1;
+	if (argv[0] == '\0')
+		error_message(NULL);
+	while (argv[++i])
+	{
+		if (argv[i] != ' ')
+			return (0);
+	}
+	error_message(NULL);
+}
 
 // NUMBER CHECK
 static int	check_dup(char **argv)
@@ -62,10 +78,12 @@ char	**check_error(char **argv)
 	char	*tmp_str;
 	char	**tmp_argv;
 
-	count = 1;
+	count = 0;
 	tmp_str = NULL;
-	if (argv[count])
-		tmp_str = ft_strdup(argv[count]);
+	while (argv[++count])
+		check_empty_string(argv[count]);
+	count = 1;
+	tmp_str = ft_strdup(argv[count]);
 	while (argv[++count])
 		tmp_str = ft_strjoin_with_space(tmp_str, argv[count]);
 	tmp_argv = ft_split(tmp_str, ' ');
@@ -76,7 +94,7 @@ char	**check_error(char **argv)
 	count = 0;
 	while (tmp_argv[count])
 	{
-		if (tmp_argv[count][0] = '\0' || check_nbr(tmp_argv[count]))
+		if (tmp_argv[count][0] == '\0' || check_nbr(tmp_argv[count]))
 			error_message(tmp_argv);
 		count++;
 	}
