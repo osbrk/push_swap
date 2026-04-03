@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/04/03 13:03:28 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/04/03 14:56:56 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,19 @@ static int	check_nbr(const char *nbr)
 	long	tmp_nbr;
 
 	i = 0;
-	tmp_nbr = ft_atol(nbr);
-	if (tmp_nbr < INT_MIN || tmp_nbr > INT_MAX)
-		return (1);
+	if (nbr[i] == 43 || nbr[i] == 45)
+		i++;
+	if (nbr[i] == '\0')
+		return (NULL);
 	while (nbr[i])
 	{
-		if ((nbr[i] == 43 || nbr[i] == 45) && ft_isdigit(nbr[i + 1]) == 0)
-			return (1);
-		else if (ft_isdigit(nbr[i + 1]) != 0)
-			i++;
 		if (ft_isdigit(nbr[i]) == 0)
 			return (1);
 		i++;
 	}
+	tmp_nbr = ft_atol(nbr);
+	if (tmp_nbr < INT_MIN || tmp_nbr > INT_MAX)
+		return (1);
 	return (0);
 }
 
@@ -73,11 +73,12 @@ char	**check_error(char **argv)
 		free (tmp_str);
 	if (tmp_argv == 0 || tmp_argv[0] == 0 || check_dup(tmp_argv))
 		error_message(tmp_argv);
-	count = -1;
-	while (tmp_argv[++count])
+	count = 0;
+	while (tmp_argv[count])
 	{
-		if (check_nbr(tmp_argv[count]))
+		if (tmp_argv[count][0] = '\0' || check_nbr(tmp_argv[count]))
 			error_message(tmp_argv);
+		count++;
 	}
 	return (tmp_argv);
 }
