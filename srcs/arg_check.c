@@ -6,14 +6,14 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/04/03 15:17:56 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/04/03 15:27:40 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // EMPTY STRING CHECK
-static int	check_empty_string(char *argv)
+static void	check_empty_string(char *argv)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ static int	check_empty_string(char *argv)
 	while (argv[++i])
 	{
 		if (argv[i] != ' ')
-			return (0);
+			return ;
 	}
 	error_message(NULL);
 }
@@ -58,7 +58,7 @@ static int	check_nbr(const char *nbr)
 	if (nbr[i] == 43 || nbr[i] == 45)
 		i++;
 	if (nbr[i] == '\0')
-		return (NULL);
+		return (1);
 	while (nbr[i])
 	{
 		if (ft_isdigit(nbr[i]) == 0)
@@ -94,7 +94,7 @@ char	**check_error(char **argv)
 	count = 0;
 	while (tmp_argv[count])
 	{
-		if (tmp_argv[count][0] == '\0' || check_nbr(tmp_argv[count]))
+		if (check_nbr(tmp_argv[count]))
 			error_message(tmp_argv);
 		count++;
 	}
