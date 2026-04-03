@@ -6,7 +6,7 @@
 /*   By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 14:35:04 by osukhore          #+#    #+#             */
-/*   Updated: 2026/04/03 12:57:59 by osukhore         ###   ########.fr       */
+/*   Updated: 2026/04/03 13:03:28 by osukhore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,12 @@ char	**check_error(char **argv)
 	tmp_argv = ft_split(tmp_str, ' ');
 	if (tmp_str)
 		free (tmp_str);
-	if (tmp_argv == 0 || tmp_argv[0] == 0)
+	if (tmp_argv == 0 || tmp_argv[0] == 0 || check_dup(tmp_argv))
 		error_message(tmp_argv);
 	count = -1;
 	while (tmp_argv[++count])
 	{
-		if (check_dup(tmp_argv) || check_nbr(tmp_argv[count]))
+		if (check_nbr(tmp_argv[count]))
 			error_message(tmp_argv);
 	}
 	return (tmp_argv);
