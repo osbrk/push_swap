@@ -6,7 +6,7 @@
 #    By: osukhore <osukhore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/07 13:16:15 by osukhore          #+#    #+#              #
-#    Updated: 2026/03/06 15:43:04 by osukhore         ###   ########.fr        #
+#    Updated: 2026/04/08 11:35:54 by osukhore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,3 @@ fclean:			clean
 re:				fclean all
 
 .PHONY:	all clean fclean re
-
-#$(LIBFT):
-#				$(MAKE) -C $(LIBFT_DIR)
